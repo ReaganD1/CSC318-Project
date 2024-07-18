@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import './Login.css'; // Ensure the path to your CSS file is correct
+import './LoginP.css'; // Ensure the path to your CSS file is correct
 import { useNavigate } from 'react-router-dom';
 
 const LoginP = () => {
@@ -44,7 +44,7 @@ const LoginP = () => {
   return (
     <div className="flex h-screen login-container items-center justify-center">
       <div className="login-box">
-        <h2 className="login-title">Login As Provider</h2>
+        <h2 className="login-title">Tutor/Instructor Login</h2>
         <form onSubmit={handleSubmit} className="login-form space-y-4">
         <div>
             <label htmlFor="email" className="signup-label">Email</label>

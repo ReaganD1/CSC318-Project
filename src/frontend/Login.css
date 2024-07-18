@@ -1,127 +1,160 @@
 /* Login.css */
-.login-container {
-    background-color: #f3f4f6; /* Light gray background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Full screen height */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.student-login-container {
+  background-color: #e0f7fa; /* Light teal background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
 .login-title {
-    text-align: center;
-    margin-bottom: 2rem; /* Spacing before the login box starts */
-    font-size: 2rem; /* Larger font size for title */
-    color: #333; /* Dark gray color for the text */
-    font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #00796b; /* Dark teal color */
+  font-weight: bold;
 }
 
 .login-box {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px; /* Max width for the login box */
-    transform: scale(1); /* Default scale */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    text-align: center; /* Center the content inside the login box */
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .login-box:hover {
-    transform: scale(1.02); /* Slightly larger scale on hover */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Larger shadow for depth effect */
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* Spacing between form elements */
-    align-items: center; /* Center form elements horizontally */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
 
 .login-input,
 .login-button,
 .signup-button {
-    padding: 0.75rem;
-    border: 2px solid transparent; /* Make border transparent by default */
-    border-radius: 0.5rem; /* Rounded borders for input and buttons */
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    width: 100%; /* Make inputs and buttons fill the container */
-    max-width: 300px; /* Limit the width for better readability */
+  padding: 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
 }
 
 .login-input:focus,
 .login-button:focus,
 .signup-button:focus {
-    border-color: #3b82f6; /* Blue border on focus */
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Glow effect on focus */
+  border-color: #00796b; /* Dark teal border on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 121, 107, 0.5); /* Glow effect on focus */
 }
 
-  
-  .login-input {
-    background-color: #edf2f7; /* Lighter background for inputs */
+.login-input {
+  background-color: #f1f8e9; /* Light green background for inputs */
+}
+
+.login-button {
+  background-color: #00796b; /* Dark teal background */
+  color: #ffffff;
+}
+
+.signup-button {
+  background-color: #004d40; /* Darker teal background */
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.login-button:hover,
+.signup-button:hover {
+  filter: brightness(90%);
+}
+
+.login-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.absolute-button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.absolute-button:hover .eye-icon {
+  color: #00796b;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+}
+
+.login-input {
+  flex: 1;
+  padding-right: 2.5rem;
+}
+
+.input-group-addon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer; /* Add cursor pointer to ensure it's clickable */
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.2rem; /* Ensure the icon size is appropriate */
+  color: #00796b; /* Set a visible color for the icon */
+}
+
+.toggle-password:hover {
+  color: #004d40; /* Slightly darker color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .login-box {
+      padding: 1rem;
   }
-  
-  .login-button {
-    background-color: #3b82f6; /* Blue background */
-    color: #ffffff; /* White text */
+
+  .login-title {
+      font-size: 1.5rem;
   }
-  
+
+  .login-button,
   .signup-button {
-    background-color: #10b981; /* Green background */
-    color: #ffffff; /* White text */
-    margin-top: 1rem; /* Spacing above the signup button */
+      padding: 0.5rem;
+      font-size: 0.875rem;
   }
-  
-  .login-button:hover,
-  .signup-button:hover {
-    filter: brightness(90%); /* Darken button color on hover */
-  }
-  
-  .login-label {
-    display: block;
-    margin-bottom: 0.5rem; /* Spacing between label and input */
-    font-weight: 600; /* Bold font for labels */
-  }
-  
-  .absolute-button {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%); /* Center the button vertically */
-    background: none; /* No background for icon button */
-    border: none; /* No border for icon button */
-    cursor: pointer; /* Pointer cursor for clickable icon */
-  }
-  
-  .absolute-button:hover .eye-icon {
-    color: #3b82f6; /* Change icon color on hover */
-  }
-  .input-group {
-    position: relative;
-    display: flex;
-  }
-  
-  .login-input {
-    flex: 1;
-    padding-right: 2.5rem; /* Add padding to prevent text from going under the icon */
-  }
-  
-  .input-group-addon {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-  }
-  
-  .toggle-password {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
+}
+
+
+
   
