@@ -199,7 +199,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--dl-color-custom-secondary1);
+    background-color: #8EB8E5;
   }
   .navbarContainer {
     width: 100%;
@@ -211,7 +211,7 @@
     padding-right: var(--dl-space-space-threeunits);
     padding-bottom: var(--dl-space-space-oneandhalfunits);
     justify-content: space-between;
-    background-color: var(--dl-color-custom-neutral-light);
+    background-color: #8EB8E5;;
   }
   .mobileMenu {
     background-color: var(--dl-color-custom-neutral-light);

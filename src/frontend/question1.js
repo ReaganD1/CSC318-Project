@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 import PropTypes from 'prop-types'
 
 import './question1.css'
 
-const Question1 = (props) => {
+const Question1 = ({ question, answer }) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
-    <div className="question1-container">
-      <span className="question1-text heading3">{props.question}</span>
-      <span className="bodySmall">{props.answer}</span>
+    <div className={`faq-item ${isActive ? 'active' : ''}`} onClick={() => setIsActive(!isActive)}>
+      <div className="faq-question">
+        {question}
+        <span className="faq-arrow">▼</span>
+      </div>
+      <div className="faq-answer">{answer}</div>
     </div>
-  )
-}
+  );
+};
 
 Question1.defaultProps = {
   answer:

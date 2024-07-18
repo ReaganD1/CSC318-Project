@@ -5,6 +5,7 @@ import { jwtDecode as jwt_decode } from 'jwt-decode';
 import Dropdown from 'react-bootstrap/Dropdown';
 import "../styles/S.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function Schedule() {
   const navigate = useNavigate();
   const [services] = useState(['fight club', 'financial advisement', 'home flavors']); // Example services
