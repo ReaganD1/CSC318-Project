@@ -23,6 +23,9 @@ import SignupP from './frontend/SignupP';
 import LoginP from './frontend/LoginP';
 import Class from './frontend/Class';
 import C from './frontend/C';
+import Entry from './frontend/entry';
+import EntryT from './frontend/entryT';
+import Tutor from './frontend/pages/Tutor';
 // Example function placeholders, replace with your actual logic
 const handleLogin = (username, password) => {
   console.log("Logging in with:", username, password);
@@ -61,6 +64,9 @@ const App = () => {
         <Route path="/loginP" element={<LoginP onLogin={handleLogin} onNavigateToSignup={navigateToSignup} />} />
         <Route path="/Class" element={<Class/>}/>
         <Route path="/C" element={<C/>}/>
+        <Route path="/entry" element={<Entry/>}/>
+        <Route path="/entryT" element={<EntryT/>}/>
+        <Route path="/tutor" element={<Tutor/>}/>
       </Routes>
     </Router>
   );

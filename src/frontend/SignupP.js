@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import './Signup.css';
+import './SignupP.css';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ const SignupP = () => {
   return (
     <div className="flex h-screen signup-container items-center justify-center">
       <div className="signup-box">
-        <h2 className="signup-title">Sign Up for an Account for Provider</h2>
+        <h2 className="signup-title">Tutor/Instructor Signup</h2>
         <form onSubmit={handleSubmit} className="signup-form space-y-4">
         <div>
             <label htmlFor="username" className="signup-label">First Name</label>
@@ -137,7 +137,7 @@ const SignupP = () => {
             </button>
           </div>
           <div className="text-center">
-            Want to learn New Skills?
+            Are you an Student?
             <button
               type="button"
               onClick={() => navigate('/signup')}

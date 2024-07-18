@@ -51,8 +51,8 @@ const Home = (props) => {
                 </a>
             </nav>
             <div className="home-buttons">
-              <button className="home-login buttonFlat" onClick={() => navigate('/login')}>Login</button>
-              <button className="home-register buttonFilled" onClick={() => navigate('/signup')}>Register</button>
+              <button className="home-login buttonFlat" onClick={() => navigate('/entry')}>Login</button>
+              <button className="home-register buttonFilled" onClick={() => navigate('/entryT')}>Register</button>
             </div>
           </div>
           <div data-thq="thq-burger-menu" className="home-burger-menu">
