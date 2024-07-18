@@ -36,12 +36,12 @@ const Home = (props) => {
                         color: 'inherit', // Assuming you want to inherit from `home-nav bodySmall`
                     }}
                     >
-                    Services
-                    </Dropdown.Toggle>
+                    Services  
+                    </Dropdown.Toggle> 
                     <Dropdown.Menu style={{ borderColor: 'transparent', boxShadow: 'none' }}>
-                    <Dropdown.Item onClick={() => navigate('/FurssanFC')} >FurssanFC</Dropdown.Item>
-                    <Dropdown.Item onClick={() => navigate('/HomeFlavors')} >HomeFlavors</Dropdown.Item>
-                    <Dropdown.Item onClick={() => navigate('/Financefuel')} >FinanceFuel</Dropdown.Item>
+                    <Dropdown.Item onClick={() => navigate('/FurssanFC')} >FurssanFC</Dropdown.Item>  
+                    <Dropdown.Item onClick={() => navigate('/HomeFlavors')} >HomeFlavors</Dropdown.Item> 
+                    <Dropdown.Item onClick={() => navigate('/Financefuel')} >FinanceFuel</Dropdown.Item> 
                     </Dropdown.Menu>
                 </Dropdown>
                 </span>
