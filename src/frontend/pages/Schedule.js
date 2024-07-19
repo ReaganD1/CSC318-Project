@@ -85,6 +85,7 @@ function Schedule() {
   };
 
   return (
+    <div className='schedule-page'>
     <div className="home-header">
       <header className="navbarContainer home-navbar-interactive">
         <span className="logo">Life Balance</span>
@@ -109,16 +110,17 @@ function Schedule() {
           <button className="home-login buttonFlat" onClick={() => navigate('/login')}>Logout</button>
         </div>
       </header>
+      </div>
     <div className="Schedule">
       <h1>Booking Form</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          Service:
+          Subject:
           <select value={selectedService} onChange={e => setSelectedService(e.target.value)}>
             <option value="">Select a Service</option>
             {services.map(service => (
               <option key={service} value={service}>{service}</option>
-            ))}
+            ))}   
           </select>
         </label>
         {selectedService && Object.entries(classes).map(([classType, classList]) => (

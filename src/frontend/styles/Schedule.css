@@ -1,12 +1,42 @@
+.schedule-page {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5; /* Light grey background for the entire page */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  align-items: center;
+}
+
+.home-header {
+  position: fixed; /* Fix the position to the top of the viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Span the full width of the viewport */
+  padding: 10px 0; /* Some padding to increase height and center text vertically */
+  text-align: center; /* Center the text horizontally */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
+
 .Schedule {
   text-align: center;
-  margin-top: 50px;
+  font-size: 24px;
+  color: #333;
+  background-color: #fff;
+  padding: 20px; /* Add padding inside the card */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 10px; /* Rounded corners for the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+  display: inline-block; /* Ensures the card only takes as much width as needed */
 }
 
 form {
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
+  border-radius: 10px; /* Rounded corners for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
   display: inline-block;
   text-align: left;
 }
@@ -14,17 +44,27 @@ form {
 label {
   display: block;
   margin-bottom: 10px;
+  font-weight: bold;
+  color: #555;
 }
 
 label > select,
 label > input {
   margin-left: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: calc(100% - 20px); /* Adjust width to fit inside the form */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;  /* This line is optional, only include it if you also want vertical centering */
+  align-items: center; /* This line is optional, only include it if you also want vertical centering */
+  padding: 20px;
 }
+
 button {
   padding: 10px 20px;
   background-color: #4CAF50; /* Green background */
@@ -37,6 +77,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button[type="submit"] {
+  text-align: left;
 }
 
 button:hover {
