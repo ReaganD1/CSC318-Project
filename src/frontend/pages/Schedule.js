@@ -7,7 +7,7 @@ import "../styles/S.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Schedule() {
   const navigate = useNavigate();
-  const [services] = useState(['fight club', 'financial advisement', 'home flavors']); // Example services
+  const [services] = useState(['Math', 'English', 'History','Science','Foriegn language']); // Example services
   const [selectedService, setSelectedService] = useState('');
   const [classes, setClasses] = useState({});
   const [selectedClassId, setSelectedClassId] = useState('');
@@ -103,7 +103,7 @@ function Schedule() {
       </header>
       </div>
     <div className="Schedule">
-      <h1>Booking Form</h1>
+      <h1 class="booking-form-header">Booking Form</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Subject:

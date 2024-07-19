@@ -133,7 +133,7 @@ function Provider() {
                 </div>
             </header>
             <div className="New_Class">
-                <h1>Create a Class</h1>
+                <h1 className='create-class-header'>Create a Class</h1>
                 <form onSubmit={handleSubmit}>
                     <label>
                         Service:

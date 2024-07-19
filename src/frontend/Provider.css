@@ -45,7 +45,7 @@ label>input {
 
 button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #A0B9C6;
   color: white;
   border: none;
   border-radius: 5px;
@@ -56,6 +56,13 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #A0B9C6;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"] {
+  text-align: left;
+}
+.create-class-header{
+  color: #8EB8E5;
 }

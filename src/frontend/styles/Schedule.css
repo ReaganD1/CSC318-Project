@@ -81,8 +81,13 @@ button {
 
 button[type="submit"] {
   text-align: left;
+  background-color: #8EB8E5;
 }
 
 button:hover {
-  background-color: #45a049; /* Darker shade of green on hover */
+  background-color: #fff; /* Darker shade of green on hover */
 }
+.booking-form-header{
+  color: #8EB8E5;
+}
+
