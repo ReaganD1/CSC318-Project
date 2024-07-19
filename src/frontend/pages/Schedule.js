@@ -7,7 +7,7 @@ import "../styles/S.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 function Schedule() {
   const navigate = useNavigate();
-  const [services] = useState(['fight club', 'financial advisement', 'home flavors']); // Example services
+  const [services] = useState(['Math', 'English', 'Science', 'History','Foreign Language']); // Example services
   const [selectedService, setSelectedService] = useState('');
   const [classes, setClasses] = useState({});
   const [selectedClassId, setSelectedClassId] = useState('');

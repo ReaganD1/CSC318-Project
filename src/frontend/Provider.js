@@ -8,9 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Provider() {
     const navigate = useNavigate();
     const [services, setServices] = useState([
-        { id: 1, service_type: 'fight club' },
-        { id: 2, service_type: 'financial advisement' },
-        { id: 3, service_type: 'home flavors' }
+        { id: 1, service_type: 'Math' },
+        { id: 2, service_type: 'English' },
+        { id: 3, service_type: 'Science' },
+        { id: 4, service_type: 'History' },
+        { id: 5, service_type: 'Foreign Language' }
+
     ]);
     const [classTypes, setClassTypes] = useState([]);
     const [address, setAddress] = useState('');
@@ -24,9 +27,11 @@ function Provider() {
 
     useEffect(() => {
         const types = {
-            'fight club': ['muay thai', 'kickboxing', 'bjj'],
-            'financial advisement': ['investments', 'taxes', 'retirement'],
-            'home flavors': ['mediterranean', 'southasian', 'mexican']
+            'Math': ['Calc 1', 'Calc 2', 'Calc 3', 'Linear Algebra'],
+            'English': ['English 101', 'Literature', 'English 102', 'English 102'],
+            'Science': ['Chemistry', 'Biology', 'Physics', 'Astronomy'],
+            'History': ['American History', 'Modern Europe', 'Ancient Civilizations', 'Governent'],
+            'Foreign Language': ['Chinese', 'Spanish', 'Latin', 'French']
         };
         setClassTypes(types[selectedService] || []);
     }, [selectedService]);
@@ -129,7 +134,7 @@ function Provider() {
           <h1>Create a Class</h1>
           <form onSubmit={handleSubmit}>
               <label>
-                  Service:
+                  Subjects:
                   <select value={selectedService} onChange={e => setSelectedService(e.target.value)}>
                       <option value="">Select a Service</option>
                       {services.map(service => (
@@ -138,7 +143,7 @@ function Provider() {
                   </select>
               </label>
               <label>
-                  Class Type:
+                  Courses:
                   <select value={selectedClassType} onChange={e => setSelectedClassType(e.target.value)}>
                       <option value="">Select a Class Type</option>
                       {classTypes.map(ct => (
@@ -147,7 +152,7 @@ function Provider() {
                   </select>
               </label>
               <label>
-                  Class Name:
+                  Class Code:
                   <input type="text" 
                   value={selectedClassName} 
                   onChange={e => setSelectedClassName(e.target.value)} 
