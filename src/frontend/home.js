@@ -128,7 +128,7 @@ const Home = () => {
       </div>
 
       {/* FAQ Section */}
-    <div className="home-faq">
+      <div className="home-faq">
       <div className="faqContainer">
         <div className="home-faq1">
           <div className="home-container26">
@@ -146,25 +146,25 @@ const Home = () => {
           </div>
           <div className="home-container27">
             <Question1
-              answer="Our tutoring sessions are charged at a rate of $20-$50 per hour."
-              question="How much does each tutor session cost?"
-            ></Question1>
-            <Question1
-              answer="You can easily book a tutoring appointment by selecting a date and time on our booking page and completing the payment process."
-              question="How can I book a tutoring appointment?"
-            ></Question1>
-            <Question1
-              answer="Yes, all our tutors are certified professionals with extensive experience in the field."
-              question="Are the tutors certified professionals?"
-            ></Question1>
-            <Question1
-              answer="Yes, you can reschedule or cancel your appointment up to 24 hours before the scheduled time. Please contact us for any changes."
-              question="Can I reschedule or cancel my appointment?"
-            ></Question1>
-            <Question1
-              answer="We accept major credit cards for payment of our tutoring services."
-              question="What payment methods do you accept?"
-            ></Question1>
+                answer="Our tutoring sessions are charged at a rate of $20-$50 per hour."
+                question="How much does each tutor session cost?"
+              ></Question1>
+              <Question1
+                answer="You can easily book a tutoring appointment by selecting a date and time on our booking page and completing the payment process."
+                question="How can I book a tutoring appointment?"
+              ></Question1>
+              <Question1
+                answer="Yes, all our tutors are certified professionals with extensive experience in the field."
+                question="Are the tutors certified professionals?"
+              ></Question1>
+              <Question1
+                answer="Yes, you can reschedule or cancel your appointment up to 24 hours before the scheduled time. Please contact us for any changes."
+                question="Can I reschedule or cancel my appointment?"
+              ></Question1>
+              <Question1
+                answer="We accept major credit cards for payment of our tutoring services."
+                question="What payment methods do you accept?"
+              ></Question1>
           </div>
         </div>
       </div>

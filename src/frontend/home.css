@@ -309,18 +309,23 @@ button.next {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0; /* Remove padding */
-  background-color: #fff;
+  padding: 50px 0; /* Add padding for better spacing */
+  background-color: #8EB8E5;
   margin-top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  border: 2px solid #000000; /* Add border */
+  border-radius: 10px; /* Optional: Add rounded corners */
+
 }
 
 .faqContainer {
-  width: 100vw; /* Ensure it extends to the full viewport width */
+  width: 100%;
+  max-width: 1200px; /* Constrain the width for better readability */
   display: flex;
-  align-items: center; /* Center-align items vertically */
-  justify-content: center; /* Center-align items horizontally */
-  padding: 0; /* Remove padding */
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
+  padding: 0 20px; /* Add padding for better spacing */
 }
 
 .home-container26 {
@@ -329,14 +334,21 @@ button.next {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  margin-bottom: 20px; /* Add spacing between sections */
 }
 
 .home-text82 {
   margin-bottom: var(--dl-space-space-oneandhalfunits);
+  font-size: 2.5em; /* Increase font size for prominence */
+  color: black; /* Brand color */
 }
 
 .home-text83 {
   text-align: center;
+  font-size: 1.2em; /* Increase font size */
+  color: black; /* Subtle text color */
+  margin-bottom: 40px; /* Add margin for spacing */
 }
 
 .home-container27 {
@@ -344,8 +356,58 @@ button.next {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
+.faq-item {
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.faq-item:hover {
+  background-color: #f9f9f9;
+}
+
+.faq-question {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.faq-question:hover {
+  color: #0056b3;
+}
+
+.faq-answer {
+  font-size: 1.2em;
+  color: black;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  padding: 0 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Adjust based on content length */
+  padding: 15px 0;
+}
+
+.faq-arrow {
+  font-size: 1.5em;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
 .home-reviews {
   flex: 0 0 auto;
   width: 100%;
