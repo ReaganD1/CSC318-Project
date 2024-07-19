@@ -42,18 +42,18 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen login-container items-center justify-center">
+    <div className="flex h-screen student-login-container items-center justify-center">
       <div className="login-box">
-        <h2 className="login-title">Login to Your Account</h2>
+        <h2 className="login-title">Student Login</h2>
         <form onSubmit={handleSubmit} className="login-form space-y-4">
-        <div>
-            <label htmlFor="email" className="signup-label">Email</label>
+          <div>
+            <label htmlFor="email" className="login-label">Email</label>
             <input
               type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="signup-input"
+              className="login-input"
               placeholder="Enter your email"
               required
             />
@@ -82,7 +82,7 @@ const Login = () => {
               </span>
             </div>
           </div>
-          <button type="submit" className="login-button">Sign In</button>
+          <button type="submit" className="login-button" style={{backgroundColor: "blue"}}>Login</button>
           <div className="text-center">
             New Here? 
             <button

@@ -46,15 +46,15 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex h-screen signup-container items-center justify-center">
+    <div className="flex h-screen student-signup-container items-center justify-center">
       <div className="signup-box">
-        <h2 className="signup-title">Sign Up for an Account</h2>
+        <h2 className="signup-title">Student Signup</h2>
         <form onSubmit={handleSubmit} className="signup-form space-y-4">
-        <div>
-            <label htmlFor="username" className="signup-label">First Name</label>
+          <div>
+            <label htmlFor="first_name" className="signup-label">First Name</label>
             <input
               type="text"
-              id="username"
+              id="first_name"
               value={first_name}
               onChange={(e) => setfirst_name(e.target.value)}
               className="signup-input"
@@ -63,10 +63,10 @@ const Signup = () => {
             />
           </div>
           <div>
-            <label htmlFor="username" className="signup-label">Last Name</label>
+            <label htmlFor="last_name" className="signup-label">Last Name</label>
             <input
               type="text"
-              id="username"
+              id="last_name"
               value={last_name}
               onChange={(e) => setlast_name(e.target.value)}
               className="signup-input"
@@ -89,16 +89,15 @@ const Signup = () => {
           <div className="relative">
             <label htmlFor="password" className="signup-label">Password</label>
             <div className="input-group">
-            <input
-              type={showPassword ? "text" : "password"}
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="signup-input"
-              placeholder="Enter your password"
-              required
-            />
-
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="signup-input"
+                placeholder="Enter your password"
+                required
+              />
               <span className="input-group-addon">
                 <button
                   type="button"
@@ -112,10 +111,10 @@ const Signup = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="phone" className="signup-label">Phone Number</label>
+            <label htmlFor="phone_number" className="signup-label">Phone Number</label>
             <input
               type="tel"
-              id="phone"
+              id="phone_number"
               value={phone_number}
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="signup-input"
@@ -123,9 +122,7 @@ const Signup = () => {
               required
             />
           </div>
-          <button type="submit" className="signup-button" style={{ backgroundColor: '#007bff', color: 'white' }}>
-            Sign Up
-          </button>
+          <button type="submit" className="signup-button" style={{backgroundColor: "blue"}} >Sign Up</button>
           <div className="text-center">
             Already have an Account?
             <button
@@ -137,7 +134,7 @@ const Signup = () => {
             </button>
           </div>
           <div className="text-center">
-            Want to be Provider?
+            Are you a Tutor/Instructor?
             <button
               type="button"
               onClick={() => navigate('/signupP')}
