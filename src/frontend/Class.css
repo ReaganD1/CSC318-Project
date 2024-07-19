@@ -27,7 +27,7 @@
   }
   button {
     padding: 10px 20px;
-    background-color: #4CAF50; /* Green background */
+    background-color: #C1C1C1; /* Green background */
     color: white; /* White text */
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
@@ -40,6 +40,6 @@
   }
   
   button:hover {
-    background-color: #45a049; /* Darker shade of green on hover */
+    background-color: #C1C1C1; /* Darker shade of green on hover */
   }
   
