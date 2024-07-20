@@ -103,7 +103,7 @@ function Schedule() {
       </header>
       </div>
     <div className="Schedule">
-      <h1 class="booking-form-header">Booking Form</h1>
+      <h1 class="booking-form-header">Create Class Form</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Subject:
@@ -139,7 +139,7 @@ function Schedule() {
             <input type="text" value={city} onChange={e => setCity(e.target.value)} placeholder="City" required />
             <input type="text" value={state} onChange={e => setState(e.target.value)} placeholder="State" required />
             <input type="text" value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder="Zip Code" required />
-            <button type="submit">Submit Booking</button>
+            <button type="submit">Submit</button>
           </>
         )}
       </form>

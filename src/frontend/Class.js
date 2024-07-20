@@ -33,7 +33,7 @@ function Class() {
       </header>
     <div className="Schedule">
     <form>
-      <h1>Class Form</h1>
+      <h1 className='class-form-title'>Class Form</h1>
         <div class="container">
           <button type="submit" onClick={() => navigate('/Provider')}>Create Your Class</button>
       </div>
