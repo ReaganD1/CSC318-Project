@@ -8,9 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Provider() {
     const navigate = useNavigate();
     const [services, setServices] = useState([
-        { id: 1, service_type: 'fight club' },
-        { id: 2, service_type: 'financial advisement' },
-        { id: 3, service_type: 'home flavors' }
+        { id: 1, service_type: 'Math' },
+        { id: 2, service_type: 'English' },
+        { id: 3, service_type: 'Science' },
+        { id: 4, service_type: 'History' },
+        { id: 5, service_type: 'Foreign Language' }
+
     ]);
     const [classTypes, setClassTypes] = useState([]);
     const [addressTypes, setAddressTypes] = useState([
@@ -31,9 +34,11 @@ function Provider() {
 
     useEffect(() => {
         const types = {
-            'fight club': ['muay thai', 'kickboxing', 'bjj'],
-            'financial advisement': ['investments', 'taxes', 'retirement'],
-            'home flavors': ['mediterranean', 'southasian', 'mexican']
+            'Math': ['Calc 1', 'Calc 2', 'Calc 3', 'Linear Algebra'],
+            'English': ['English 101', 'Literature', 'English 102', 'English 102'],
+            'Science': ['Chemistry', 'Biology', 'Physics', 'Astronomy'],
+            'History': ['American History', 'Modern Europe', 'Ancient Civilizations', 'Governent'],
+            'Foreign Language': ['Chinese', 'Spanish', 'Latin', 'French']
         };
         setClassTypes(types[selectedService] || []);
     }, [selectedService]);
