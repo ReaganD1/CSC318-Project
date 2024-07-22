@@ -91,3 +91,8 @@ button:hover {
   color: #8EB8E5;
 }
 
+form {
+  width: 100%; /* Ensure forms take up the full width of the parent container */
+  display: flex;
+  flex-direction: column;
+}

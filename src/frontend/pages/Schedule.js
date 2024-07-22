@@ -5,14 +5,14 @@ import { jwtDecode as jwt_decode } from 'jwt-decode';
 import Dropdown from 'react-bootstrap/Dropdown';
 import "../styles/S.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function Schedule() {
   const navigate = useNavigate();
-  const [services] = useState(['Math', 'English', 'Science', 'History','Foreign Language']); // Example services
+  const [services] = useState(['Math', 'English', 'Science', 'History', 'Foreign Language']);
   const [selectedService, setSelectedService] = useState('');
   const [classes, setClasses] = useState({});
   const [selectedClassId, setSelectedClassId] = useState('');
 
-  // States for payment form
   const [creditCardNumber, setCreditCardNumber] = useState('');
   const [cvc, setCvc] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
@@ -29,11 +29,11 @@ function Schedule() {
   useEffect(() => {
     if (selectedService) {
       fetch(`http://localhost:3000/api/users/classes/${encodeURIComponent(selectedService)}`, {
-          headers: { 'Authorization': `Bearer ${token}` }
+        headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(response => response.json())
       .then(data => {
-          setClasses(data.data || {});
+        setClasses(data.data || {});
       })
       .catch(err => console.error('Failed to fetch class types', err));
     } else {
@@ -41,7 +41,12 @@ function Schedule() {
     }
   }, [selectedService, token]);
 
-  const handleSubmit = async (event) => {
+  const handleClassSubmit = async (event) => {
+    event.preventDefault();
+    // Handle class selection submission if needed
+  };
+
+  const handlePaymentSubmit = async (event) => {
     event.preventDefault();
     if (!token) {
       alert('No token found, please log in');
@@ -74,7 +79,7 @@ function Schedule() {
 
       if (response.ok) {
         alert('Booking successful!');
-        navigate('/billing'); // Redirect to billing or confirmation page
+        navigate('/billing');
       } else {
         const errorData = await response.json();
         alert('Failed to book: ' + errorData.message);
@@ -86,49 +91,52 @@ function Schedule() {
 
   return (
     <div className='schedule-page'>
-    <div className="home-header">
-      <header className="navbarContainer home-navbar-interactive">
-        <span className="logo">Life Balance</span>
-        <div className="home-desktop-menu">
-          <nav className="home-links">
-            <span className="home-nav" onClick={() => navigate('/')}>Home</span>
-            <span className="home-nav bodySmall" onClick={() => navigate('/tutor')}>About Us</span>
-            <span className="home-nav" onClick={() => navigate('/schedule')}>Book Appointment</span>
-            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer"  style={{ textDecoration: 'none', color: 'inherit' }}>
-              <span className="home-nav">Contact Us</span>
-            </a>
-          </nav>
-          <button className="home-login buttonFlat" onClick={() => navigate('/login')}>Logout</button>
-        </div>
-      </header>
+      <div className="home-header">
+        <header className="navbarContainer home-navbar-interactive">
+          <span className="logo">Life Balance</span>
+          <div className="home-desktop-menu">
+            <nav className="home-links">
+              <span className="home-nav" onClick={() => navigate('/')}>Home</span>
+              <span className="home-nav bodySmall" onClick={() => navigate('/tutor')}>About Us</span>
+              <span className="home-nav" onClick={() => navigate('/schedule')}>Book Appointment</span>
+              <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <span className="home-nav">Contact Us</span>
+              </a>
+            </nav>
+            <button className="home-login buttonFlat" onClick={() => navigate('/login')}>Logout</button>
+          </div>
+        </header>
       </div>
-    <div className="Schedule">
-      <h1 class="booking-form-header">Create Class Form</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Subject:
-          <select value={selectedService} onChange={e => setSelectedService(e.target.value)}>
-            <option value="">Select a Service</option>
-            {services.map(service => (
-              <option key={service} value={service}>{service}</option>
-            ))}   
-          </select>
-        </label>
-        {selectedService && Object.entries(classes).map(([classType, classList]) => (
-          <label key={classType}>
-            {classType}:
-            <select onChange={e => setSelectedClassId(e.target.value)}>
-              <option value="">Select a Class</option>
-              {classList.map(classItem => (
-                <option key={classItem.id} value={classItem.id}>
-                  {`${classItem.name} - $${classItem.cost} - ${new Date(classItem.startTime).toLocaleString()} to ${new Date(classItem.endTime).toLocaleString()}`}
-                </option>
+      <div className="Schedule">
+        <h1 className="booking-form-header">Create Class Form</h1>
+        <form onSubmit={handleClassSubmit}>
+          <label>
+            Subject:
+            <select value={selectedService} onChange={e => setSelectedService(e.target.value)}>
+              <option value="">Select a Service</option>
+              {services.map(service => (
+                <option key={service} value={service}>{service}</option>
               ))}
             </select>
           </label>
-        ))}
+          {selectedService && Object.entries(classes).map(([classType, classList]) => (
+            <label key={classType}>
+              {classType}:
+              <select onChange={e => setSelectedClassId(e.target.value)}>
+                <option value="">Select a Class</option>
+                {classList.map(classItem => (
+                  <option key={classItem.id} value={classItem.id}>
+                    {`${classItem.name} - $${classItem.cost} - ${new Date(classItem.startTime).toLocaleString()} to ${new Date(classItem.endTime).toLocaleString()}`}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ))}
+        </form>
+
         {selectedClassId && (
-          <>
+          <form onSubmit={handlePaymentSubmit}>
+            <h2>Payment Information</h2>
             <input type="text" value={creditCardNumber} onChange={e => setCreditCardNumber(e.target.value)} placeholder="Credit Card Number" required />
             <input type="text" value={cvc} onChange={e => setCvc(e.target.value)} placeholder="CVC" required />
             <input type="month" value={expirationDate} onChange={e => setExpirationDate(e.target.value)} placeholder="Expiration Date" required />
@@ -139,15 +147,12 @@ function Schedule() {
             <input type="text" value={city} onChange={e => setCity(e.target.value)} placeholder="City" required />
             <input type="text" value={state} onChange={e => setState(e.target.value)} placeholder="State" required />
             <input type="text" value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder="Zip Code" required />
-            <button type="submit">Submit</button>
-          </>
+            <button type="submit">Submit Payment</button>
+          </form>
         )}
-      </form>
-    </div>
+      </div>
     </div>
   );
 }
 
 export default Schedule;
-
-
