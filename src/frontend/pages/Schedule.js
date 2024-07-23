@@ -31,11 +31,11 @@ function Schedule() {
       fetch(`http://localhost:3000/api/users/classes/${encodeURIComponent(selectedService)}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
-      .then(response => response.json())
-      .then(data => {
-        setClasses(data.data || {});
-      })
-      .catch(err => console.error('Failed to fetch class types', err));
+        .then(response => response.json())
+        .then(data => {
+          setClasses(data.data || {});
+        })
+        .catch(err => console.error('Failed to fetch class types', err));
     } else {
       setClasses({});
     }
@@ -137,17 +137,24 @@ function Schedule() {
         {selectedClassId && (
           <form onSubmit={handlePaymentSubmit}>
             <h2>Payment Information</h2>
-            <input type="text" value={creditCardNumber} onChange={e => setCreditCardNumber(e.target.value)} placeholder="Credit Card Number" required />
-            <input type="text" value={cvc} onChange={e => setCvc(e.target.value)} placeholder="CVC" required />
-            <input type="month" value={expirationDate} onChange={e => setExpirationDate(e.target.value)} placeholder="Expiration Date" required />
-            <input type="text" value={cardholderFirstName} onChange={e => setCardholderFirstName(e.target.value)} placeholder="Cardholder First Name" required />
-            <input type="text" value={cardholderLastName} onChange={e => setCardholderLastName(e.target.value)} placeholder="Cardholder Last Name" required />
-            <input type="text" value={addressOne} onChange={e => setAddressOne(e.target.value)} placeholder="Address Line 1" required />
-            <input type="text" value={addressTwo} onChange={e => setAddressTwo(e.target.value)} placeholder="Address Line 2" />
-            <input type="text" value={city} onChange={e => setCity(e.target.value)} placeholder="City" required />
-            <input type="text" value={state} onChange={e => setState(e.target.value)} placeholder="State" required />
-            <input type="text" value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder="Zip Code" required />
-            <button type="submit">Submit Payment</button>
+            <div class="input-row full-width">
+              <input type="text" value={creditCardNumber} onChange={e => setCreditCardNumber(e.target.value)} placeholder="Credit Card Number" required />
+              <input type="text" id='cvc' value={cvc} onChange={e => setCvc(e.target.value)} placeholder="CVC" required />
+              <input type="month" value={expirationDate} onChange={e => setExpirationDate(e.target.value)} placeholder="Expiration Date" required />
+            </div>
+            <div class="input-row full-width">
+              <input type="text" value={cardholderFirstName} onChange={e => setCardholderFirstName(e.target.value)} placeholder="Cardholder First Name" required />
+              <input type="text" value={cardholderLastName} onChange={e => setCardholderLastName(e.target.value)} placeholder="Cardholder Last Name" required />
+            </div>
+            <div class="input-row full-width">
+              <input type="text" value={addressOne} onChange={e => setAddressOne(e.target.value)} placeholder="Address Line 1" required />
+              <input type="text" value={addressTwo} onChange={e => setAddressTwo(e.target.value)} placeholder="Address Line 2" />
+            </div>
+            <div class="input-row">
+              <input type="text" value={city} onChange={e => setCity(e.target.value)} placeholder="City" required />
+              <input type="text" value={state} onChange={e => setState(e.target.value)} placeholder="State" required />
+              <input type="text" value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder="Zip Code" required />
+            </div>
           </form>
         )}
       </div>

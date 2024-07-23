@@ -39,6 +39,9 @@ form {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
   display: inline-block;
   text-align: left;
+  width: 100%; /* Ensure forms take up the full width of the parent container */
+  display: flex;
+  flex-direction: column;
 }
 
 label {
@@ -59,10 +62,12 @@ label > input {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* This line is optional, only include it if you also want vertical centering */
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 button {
@@ -91,8 +96,53 @@ button:hover {
   color: #8EB8E5;
 }
 
-form {
-  width: 100%; /* Ensure forms take up the full width of the parent container */
+.input-row {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input-row input::placeholder {
+  color: #999;
+}
+
+input[type="month"] {
+  flex: 0 0 120px; /* Width for the Expiration Date input */
+}
+
+#cvc {
+  flex: 0 0 100px; 
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .input-row input {
+    flex: 1 0 100%;
+    margin-right: 0;
+  }
+
+  .small-input, input[type="month"] {
+    flex: 1 0 100%;
+  }
+}
+
+h2 {
+  font-size: 24px; /* Adjust the font size as needed */
 }
