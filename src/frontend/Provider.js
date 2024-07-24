@@ -87,7 +87,7 @@ function Provider() {
                 body: JSON.stringify({
                     serviceType: selectedService,
                     classType: selectedClassType,
-                    addressType: selectedAddress,
+                    addressId: selectedAddress,
                     className: selectedClassName,
                     cost: classCost,
                     startTime: formattedStartTime,
