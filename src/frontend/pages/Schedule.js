@@ -155,6 +155,7 @@ function Schedule() {
               <input type="text" value={state} onChange={e => setState(e.target.value)} placeholder="State" required />
               <input type="text" value={zipcode} onChange={e => setZipcode(e.target.value)} placeholder="Zip Code" required />
             </div>
+            <button type="submit">Submit Payment</button>
           </form>
         )}
       </div>
