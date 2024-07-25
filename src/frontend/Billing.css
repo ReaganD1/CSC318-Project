@@ -15,7 +15,7 @@
 }
 
 h1 {
-  color: #008000;
+  color: #50A2A7;
   font-family: 'Arial', sans-serif;
   margin-bottom: 20px;
 }
@@ -24,4 +24,20 @@ p {
   color: #333333;
   font-family: 'Verdana', sans-serif;
   font-size: 18px;
+}
+
+button {
+  display: block;
+  margin: 20px auto; /* Center the button horizontally */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #50A2A7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #50A2A7;
 }

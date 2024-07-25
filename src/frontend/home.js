@@ -20,7 +20,7 @@ const Home = () => {
     { image: science, text: 'Science' },
     { image: english, text: 'English' },
     { image: history, text: 'History' },
-    { image: spanish, text: 'Spanish' },
+    { image: spanish, text: 'Foreign Language' },
   ];
 
   // State to manage current slide index
