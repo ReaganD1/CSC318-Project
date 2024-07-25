@@ -12,18 +12,9 @@ function Class() {
         <span className="logo">Life Balance</span>
         <div className="home-desktop-menu">
           <nav className="home-links">
-            <span className="home-nav" onClick={() => navigate('/')}>Home</span>
-            <Dropdown>
-              <Dropdown.Toggle variant="" id="dropdown-basic">
-                Services
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => navigate('/FurssanFC')}>Furssan FC</Dropdown.Item>
-                <Dropdown.Item onClick={() => navigate('/HomeFlavors')}>Home Flavors</Dropdown.Item>
-                <Dropdown.Item onClick={() => navigate('/FinanceFuel')}>Finance Fuel</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <span className="home-nav" onClick={() => navigate('/schedule')}>Book Appointment</span>
+            <span className="home-nav" onClick={() => navigate('/Class')}>Home</span>
+            <span className="home-nav bodySmall" onClick={() => navigate('/tutor')}>About Us</span>
+            <span className="home-nav" onClick={() => navigate('/provider')}>Create Class</span>
             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank" rel="noopener noreferrer"  style={{ textDecoration: 'none', color: 'inherit' }}>
               <span className="home-nav">Contact Us</span>
             </a>

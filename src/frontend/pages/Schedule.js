@@ -93,7 +93,7 @@ function Schedule() {
     <div className='schedule-page'>
       <div className="home-header">
         <header className="navbarContainer home-navbar-interactive">
-          <span className="logo">Life Balance</span>
+          <span className="logo">Tutor Scheduler Pro</span>
           <div className="home-desktop-menu">
             <nav className="home-links">
               <span className="home-nav" onClick={() => navigate('/')}>Home</span>
