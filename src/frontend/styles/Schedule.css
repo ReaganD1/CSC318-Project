@@ -14,7 +14,7 @@
   top: 0; /* Align to the top */
   left: 0; /* Align to the left */
   width: 100%; /* Span the full width of the viewport */
-  padding: 10px 0; /* Some padding to increase height and center text vertically */
+  padding: 0px 0; /* Some padding to increase height and center text vertically */
   text-align: center; /* Center the text horizontally */
   z-index: 1000; /* Ensure it stays on top of other content */
 }
