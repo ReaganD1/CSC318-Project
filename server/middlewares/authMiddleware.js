@@ -3,24 +3,24 @@ const jwt = require('jsonwebtoken');
 const authMiddleware = (req, res, next) => {
   let token;
 
-  // Check if an authorization header exists and starts with 'Bearer'
+  console.log('Authorization Header:', req.headers.authorization);
+
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
-    // Try to extract and verify the token
     try {
-      token = req.headers.authorization.split(' ')[1]; // Extract the token from the header
-      const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verify the token
-      req.user = decoded; // Attach user data to the request object
-      console.log('Decoded JWT:', req.user);  // Log decoded token for debugging
-      next(); // Proceed to the next middleware
+      token = req.headers.authorization.split(' ')[1];
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      req.user = decoded;
+      console.log('Decoded JWT:', req.user);
+      next();
     } catch (error) {
-      // Handle errors related to token verification (such as expiration or tampering)
       console.error('Not authorized, token failed:', error.message);
       res.status(401).json({ message: 'Not authorized, token failed' });
     }
   } else {
-    // Handle cases where no token is present
+    console.error('No token provided, authorization denied');
     res.status(401).json({ message: 'No token provided, authorization denied' });
   }
 };
 
 module.exports = authMiddleware;
+
