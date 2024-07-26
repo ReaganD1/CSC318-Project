@@ -36,7 +36,7 @@ const Tutor = () => {
     <div className="aboutcheck">
         <header className="hero-section">
           <h1>Welcome to Tutor Scheduler Pro</h1>
-          <p>Your gateway to expert tutoring in Math, English, Science, and History</p>
+          <p>Your gateway to expert tutoring in Math, English, Science, History, and Foreign Language</p>
         </header>
         <section className="goals-section">
           <h2>Our Main Goals</h2>
