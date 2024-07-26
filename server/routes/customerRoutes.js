@@ -9,8 +9,6 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const { notFound, errorHandler } = require('../middlewares/errorMiddleware');
 const roleMiddleware = require('../middlewares/roleMiddleware');
 
-// Routes Definitions
-
 // Route to register a new customer (Public access)
 router.post('/signup', customerController.registerCustomer, errorHandler);
 
@@ -33,3 +31,4 @@ router.use(notFound);
 router.use(errorHandler);
 
 module.exports = router;
+

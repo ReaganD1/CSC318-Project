@@ -1,8 +1,6 @@
 require('dotenv').config(); 
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
 const customerRoutes = require('./routes/customerRoutes');
 const providerRoutes = require('./routes/providerRoutes');
 const reportRoute = require('./routes/reportRoute');
@@ -36,5 +34,6 @@ app.listen(port, () => {
 });
 
 module.exports = app;
+
 
 // testing a lottttttt
