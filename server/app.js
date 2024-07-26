@@ -1,6 +1,8 @@
 require('dotenv').config(); 
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 const customerRoutes = require('./routes/customerRoutes');
 const providerRoutes = require('./routes/providerRoutes');
 const reportRoute = require('./routes/reportRoute');
@@ -28,12 +30,11 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Server activation
-const port = process.env.PORT || 3001;
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Server started on port ${process.env.PORT || 3001}`);
 });
 
-module.exports = app;
+// testing a lottttttt
 
 
 // testing a lottttttt
