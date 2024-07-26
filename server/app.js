@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); 
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -18,7 +18,7 @@ app.use('/api/report', reportRoute);
 
 // Additional endpoints (optional, for direct testing or simple outputs)
 app.get("/", (req, res) => {
-    res.send("<h1>Home Page</h1>");
+    res.send("<h1>Home Page</h1>")
 });
 app.get("/test", (req, res) => {
     res.send("Test route works!");
@@ -30,14 +30,8 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Server activation
-const port = process.env.PORT || 3001;
-if (process.env.NODE_ENV !== 'test') {
-    app.listen(port, () => {
-        console.log(`Server started on port ${port}`);
-    });
-}
-
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Server started on port ${process.env.PORT || 3001}`);
+});
 module.exports = app; // Export app for vercel
-
-
 // testing a lottttttt
