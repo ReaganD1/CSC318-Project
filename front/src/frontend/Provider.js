@@ -45,7 +45,7 @@ function Provider() {
 
     const handleExcel = async () => {
         try {
-            const response = await fetch(`${baseURL}/api/report/download-excel`);
+            const response = await fetch(`http://localhost:3000/api/report/download-excel`);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -78,7 +78,7 @@ function Provider() {
         const formattedEndTime = `${date.split('-').join('-')} ${endTime}:00`;
 
         try {
-            const response = await fetch(`${baseURL}/api/providers/create`, {
+            const response = await fetch(`http://localhost:3000/api/providers/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
