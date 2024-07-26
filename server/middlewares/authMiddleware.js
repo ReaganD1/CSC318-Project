@@ -3,17 +3,16 @@ const jwt = require('jsonwebtoken');
 const authMiddleware = (req, res, next) => {
   let token;
 
-  // Log environment variable (ensure to remove this after debugging)
-  console.log('JWT_SECRET:', process.env.JWT_SECRET);
+  // Hardcoded JWT secret for testing purposes
+  const hardcodedSecret = 'b887b8e65f944130f64345a7d3c4744a79b8aa85d9b2258e45ddfd383546dc54';
 
   // Check if an authorization header exists and starts with 'Bearer'
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
-    // Try to extract and verify the token
     try {
       token = req.headers.authorization.split(' ')[1]; // Extract the token from the header
       console.log('Token:', token);
 
-      const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verify the token
+      const decoded = jwt.verify(token, hardcodedSecret); // Verify the token with the hardcoded secret
       req.user = decoded; // Attach user data to the request object
       console.log('Decoded JWT:', req.user);  // Log decoded token for debugging
 
