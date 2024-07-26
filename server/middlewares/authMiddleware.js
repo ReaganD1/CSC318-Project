@@ -9,14 +9,15 @@ const authMiddleware = (req, res, next) => {
   // Log all headers for debugging
   console.log('Incoming Headers:', req.headers);
 
-  // Check if an authorization header exists and starts with 'Bearer'
+  // Check if an authorization header exists
   if (req.headers.authorization) {
     console.log('Authorization header found:', req.headers.authorization);
 
-    if (req.headers.authorization.startsWith('Bearer')) {
+    // Check if the authorization header starts with 'Bearer '
+    if (req.headers.authorization.startsWith('Bearer ')) {
       try {
         token = req.headers.authorization.split(' ')[1]; // Extract the token from the header
-        console.log('Token:', token);
+        console.log('Token extracted:', token);
 
         const decoded = jwt.verify(token, hardcodedSecret); // Verify the token with the hardcoded secret
         req.user = decoded; // Attach user data to the request object
