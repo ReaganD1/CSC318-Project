@@ -31,7 +31,9 @@ const Tutor = () => {
             </nav>
 
           </div>
-        </header>
+    </header>
+    </div>
+    <div className="aboutcheck">
         <header className="hero-section">
           <h1>Welcome to Tutor Scheduler Pro</h1>
           <p>Your gateway to expert tutoring in Math, English, Science, and History</p>
@@ -80,7 +82,7 @@ const Tutor = () => {
         </section>
 
       </div>
-    </div>
+      </div>
   );
 };
 
