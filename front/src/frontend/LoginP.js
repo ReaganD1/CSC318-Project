@@ -8,11 +8,11 @@ const LoginP = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
+  const baseURL = 'https://csc-318-project.vercel.app/';
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/api/providers/loginP', {
+      const response = await fetch(`${baseURL}/api/providers/loginP`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
