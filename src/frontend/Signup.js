@@ -12,11 +12,11 @@ const Signup = () => {
   const [phone_number, setPhoneNumber] = useState(''); // New state for phone number
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
+  const baseURL = 'https://rest-api-ashy-seven.vercel.app/';
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/api/users/signup', {
+      const response = await fetch(`${baseURL}/api/users/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

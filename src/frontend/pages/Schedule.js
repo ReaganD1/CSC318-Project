@@ -25,10 +25,10 @@ function Schedule() {
   const [zipcode, setZipcode] = useState('');
 
   const token = localStorage.getItem('token');
-
+  const baseURL = 'https://rest-api-ashy-seven.vercel.app/';
   useEffect(() => {
     if (selectedService) {
-      fetch(`http://localhost:3000/api/users/classes/${encodeURIComponent(selectedService)}`, {
+      fetch(`${baseURL}/api/users/classes/${encodeURIComponent(selectedService)}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
         .then(response => response.json())
@@ -68,7 +68,7 @@ function Schedule() {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/users/payment', {
+      const response = await fetch(`${baseURL}/api/users/payment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
