@@ -31,7 +31,7 @@ function Provider() {
     const [date, setDate] = useState('');
     const [startTime, setStartTime] = useState('');
     const [endTime, setEndTime] = useState('');
-    const baseURL = 'https://rest-api-ashy-seven.vercel.app/';
+    const baseURL = 'https://csc-318-project.vercel.app/';
     useEffect(() => {
         const types = {
             'Math': ['Calc 1', 'Calc 2', 'Calc 3', 'Linear Algebra'],
@@ -45,7 +45,7 @@ function Provider() {
 
     const handleExcel = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/report/download-excel`);
+            const response = await fetch(`${baseURL}api/report/download-excel`);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
