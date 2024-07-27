@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const authMiddleware = (req, res, next) => {
+  console.log('Authorization Header:', req.headers.authorization); // Add this line
   let token;
 
   // Check if an authorization header exists and starts with 'Bearer'

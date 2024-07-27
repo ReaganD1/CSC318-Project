@@ -28,7 +28,7 @@ function Schedule() {
   const baseURL = 'https://rest-api-ashy-seven.vercel.app/';
   useEffect(() => {
     if (selectedService) {
-      fetch(`${baseURL}/api/users/classes/${encodeURIComponent(selectedService)}`, {
+      fetch(`http://localhost:3000/api/users/classes/${encodeURIComponent(selectedService)}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
         .then(response => response.json())
